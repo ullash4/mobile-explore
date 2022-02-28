@@ -5,9 +5,10 @@ const getValue=()=>{
     fetch(url)
     .then(res => res.json())
     .then(data => showPhone(data.data))
+    inputValue.value='';
 }
 const showPhone = phones =>{
-    const div = document.getElementById('injected-div')
+    const div = document.getElementById('injected-div');
     phones.forEach(phone => {
         // console.log(phone);
         const newDiv = document.createElement('div');
@@ -21,7 +22,9 @@ const showPhone = phones =>{
         </div>
       </div>`;
       div.appendChild(newDiv);
+      
     });
+    
 }
 
 const getDetail = details =>{
