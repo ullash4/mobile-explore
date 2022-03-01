@@ -13,7 +13,7 @@ const getValue=()=>{
     .then(data => showPhone(data.data))
     inputValue.value=''; 
 };
-// Show Phones on UI 
+// Show searched Phones on UI 
 const showPhone = phones =>{
     const div = document.getElementById('injected-div');
     div.textContent='';
