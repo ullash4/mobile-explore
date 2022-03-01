@@ -5,9 +5,10 @@ const getValue=()=>{
     fetch(url)
     .then(res => res.json())
     .then(data => showPhone(data.data))
-    inputValue.value='';
+    inputValue.value=''; 
 }
 const showPhone = phones =>{
+    // console.log(phones);
     const div = document.getElementById('injected-div');
     div.textContent='';
     phones.slice(0, 20).forEach(phone => {
@@ -35,14 +36,14 @@ const getDetail = details =>{
     .then(data => showDetail(data.data))
 }
 const showDetail = detailShow =>{
-    console.log(detailShow);
+    // console.log(detailShow);
     // console.log(detailShow.mainFeatures.sensors);
     const div2 = document.getElementById('injected-div2');
     div2.textContent='';
     
     const newDiv2 = document.createElement('div');
     newDiv2.innerHTML = `
-        <div class="card border-0 p-1 shadow-lg p-3 mb-5 bg-body rounded" style="width: 18rem;">
+        <div class="card border-0 p-1 shadow-lg p-3 mb-5 bg-body rounded">
             <img src="${detailShow.image}" class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">${detailShow.name}</h5>
